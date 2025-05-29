@@ -19,6 +19,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+// Tambahkan kode ini di sini
+        if (Session::has('locale')) {
+            App::setLocale(Session::get('locale'));
+        } else {
+            // Opsional: atur locale default jika tidak ada di sesi
+            // App::setLocale(config('app.fallback_locale', 'en'));
+        }
     }
 }
