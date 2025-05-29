@@ -25,7 +25,8 @@ class AppServiceProvider extends ServiceProvider
             App::setLocale(Session::get('locale'));
         } else {
             // Opsional: atur locale default jika tidak ada di sesi
-            // App::setLocale(config('app.fallback_locale', 'en'));
+            App::setLocale(config('app.fallback_locale', 'en'));
+
         }
     }
 }
